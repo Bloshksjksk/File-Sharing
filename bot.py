@@ -12,10 +12,10 @@ OWNER_ID = os.environ['OWNER_ID']
 #Button
 START_BUTTONS=[
     [
-        InlineKeyboardButton('Source', url='https://github.com/X-Gorn/File-Sharing'),
-        InlineKeyboardButton('Project Channel', url='https://t.me/xTeamBots'),
+        InlineKeyboardButton('𝙲𝚛𝚎𝚊𝚝𝚘𝚛🌟', url='https://t.me/fligher'),
+        InlineKeyboardButton('𝚃𝚛𝚞𝚖𝙱𝚘𝚝𝚜🏆', url='https://t.me/movie_time_botonly'),
     ],
-    [InlineKeyboardButton('Author', url="https://t.me/xgorn")],
+    [InlineKeyboardButton('𝙲𝚑𝚊𝚗𝚗𝚎𝚕𝚜🚨', url="https://t.me/lion_stage")],
 ]
 
 # Running bot
@@ -84,7 +84,7 @@ async def _startfile(bot, update):
 # Help msg
 @xbot.on_message(filters.command('help') & filters.private)
 async def _help(bot, update):
-    await update.reply_text("Supported file types:\n\n- Video\n- Audio\n- Photo\n- Document\n- Sticker\n- GIF\n- Voice note\n- Video note\n\n If bot didn't respond, contact @xgorn", True)
+    await update.reply_text("Supported file types:\n\n- Video\n- Audio\n- Photo\n- Document\n- Sticker\n- GIF\n- Voice note\n- Video note\n\n If bot didn't respond, contact @fligher", True)
 
 
 async def __reply(update, copied):
@@ -114,7 +114,7 @@ async def __reply(update, copied):
         True,
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton('Sharing Link',
-                                  url=f'https://t.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}')]
+                                  url=f'https://telegram.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}')]
         ])
     )
     await asyncio.sleep(0.5)  # Wait do to avoid 5 sec flood ban 
