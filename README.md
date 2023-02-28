@@ -25,6 +25,15 @@ Telegram RoBot to Share any telegram files and get the shareable link.
 
 👉 Media group
 
+<details><summary>Deploy To Heroku</summary>
+<p>
+<br>
+<a href="https://heroku.com/deploy?template=https://github.com/LieStage/File-Sharing">
+  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+</a>
+</p>
+</details>
+
 ## Telegram Support:
 
 [![Group](https://img.shields.io/badge/TG-Group-30302f?style=flat&logo=telegram)](https://t.me/WeebProgrammer)
