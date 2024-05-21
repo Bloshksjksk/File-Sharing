@@ -1,3 +1,7 @@
 Pyrogram
 TgCrypto
 asyncio
+aiofiles
+requests
+motor
+aiohttp
