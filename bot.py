@@ -12,7 +12,7 @@ from broadcast_helper import send_msg
 from database import Database
 
 from pyrogram.types import Message
-db = Database("mongodb+srv://ft:Q5W6QD4HY1QGh5JN@cluster0.c1zu1o3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+db = Database("mongodb+srv://ft:Q5W6QD4HY1QGh5JN@cluster0.c1zu1o3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0","publicstore")
 broadcast_ids = {}
 
 
