@@ -32,7 +32,7 @@ with xbot:
 async def _startfile(bot, update):
     if update.text == '/start':
         await update.reply_text(
-            f"I'm File-Sharing!\nYou can share any telegram files and get the sharing link using this bot!\n\n/help for more details...",
+            f"I'm File-Sharing!\nYou can share any telegram files and get the sharing link using this bot!\n\n<blockquote> If You Send Singlefile you get single link or if you send a multiple file you get multiple files single link limit upto 100</blockquote>\n\n/help for more details...",
             True, reply_markup=InlineKeyboardMarkup(START_BUTTONS))
         return
 
@@ -110,10 +110,10 @@ async def __reply(update, copied):
         return
 
     await update.reply_text(
-        'Here is Your Sharing Link:',
+        "Here is Your Sharing Link 🔗: f'https://telegram.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}'",
         True,
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton('Sharing Link',
+            [InlineKeyboardButton('🖇️Sharing Link🖇️',
                                   url=f'https://telegram.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}')]
         ])
     )
