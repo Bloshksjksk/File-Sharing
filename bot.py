@@ -115,12 +115,12 @@ media_group_id = 0
 @xbot.on_message(filters.media & filters.private & filters.media_group)
 async def _main_grop(bot, update):
     global media_group_id
-    if OWNER_ID == 'all':
-        pass
-    elif int(OWNER_ID) == update.from_user.id:
-        pass
-    else:
-        return
+    # if OWNER_ID == 'all':
+    #     pass
+    # elif int(OWNER_ID) == update.from_user.id:
+    #     pass
+    # else:
+    #     return
 
     if int(media_group_id) != int(update.media_group_id):
         media_group_id = update.media_group_id
@@ -135,12 +135,12 @@ async def _main_grop(bot, update):
 # Store file
 @xbot.on_message(filters.media & filters.private & ~filters.media_group)
 async def _main(bot, update):
-    if OWNER_ID == 'all':
-        pass
-    elif int(OWNER_ID) == update.from_user.id:
-        pass
-    else:
-        return
+    # if OWNER_ID == 'all':
+    #     pass
+    # elif int(OWNER_ID) == update.from_user.id:
+    #     pass
+    # else:
+    #     return
     copied = await update.copy(TRACK_CHANNEL)
     await __reply(update, copied)
 xbot.run()
