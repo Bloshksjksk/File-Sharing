@@ -175,7 +175,7 @@ async def _main(bot, update):
 @xbot.on_message(filters.command("users") & filters.private)
 async def sts(c: Client, m: Message):
     user_id=m.from_user.id 
-    if user_id in OWNER_ID:
+    if 'user_id' in 'OWNER_ID':
         total_users = await db.total_users_count()
         await m.reply_text(text=f"Total Users in DB: {total_users}", quote=True)
         
