@@ -15,7 +15,7 @@ START_BUTTONS=[
         InlineKeyboardButton('𝙲𝚛𝚎𝚊𝚝𝚘𝚛🌟', url='https://t.me/fligher'),
         InlineKeyboardButton('𝚃𝚛𝚞𝚖𝙱𝚘𝚝𝚜🏆', url='https://t.me/movie_time_botonly'),
     ],
-    [InlineKeyboardButton('𝙲𝚑𝚊𝚗𝚗𝚎𝚕𝚜🚨', url="https://t.me/lion_stage")],
+    [InlineKeyboardButton('𝙲𝚑𝚊𝚗𝚗𝚎𝚕𝚜🚨', url="https://t.me/+ExBm8lEipxRkMTA1")],
 ]
 
 # Running bot
