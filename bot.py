@@ -111,11 +111,11 @@ async def __reply(update, copied):
             [InlineKeyboardButton('Sharing Link🔗',
                                   url=f'https://telegram.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}')],
             [InlineKeyboardButton('Delete Link🚮',
-                                  callback_data=f'delfile#{msg_id}')]
+                                  callback_data='close_data')]
             
         ])
     )
-    await asyncio.sleep(0.5)  # Wait do to avoid 5 sec flood ban 
+     # Wait do to avoid 5 sec flood ban 
 # Store media_group
 media_group_id = 0
 @xbot.on_message(filters.media & filters.private & filters.media_group)
