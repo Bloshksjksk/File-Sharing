@@ -126,6 +126,7 @@ async def _main_grop(bot, update):
         media_group_id = update.media_group_id
         copied = (await bot.copy_media_group(TRACK_CHANNEL, update.from_user.id, update.id))[0]
         copied = (await bot.copy_media_group(TRACK_CHANNEL, update.from_user.id, update.id))[0]
+        
         await __reply(update, copied)
 
     else:
@@ -143,4 +144,13 @@ async def _main(bot, update):
     #     return
     copied = await update.copy(TRACK_CHANNEL)
     await __reply(update, copied)
+
+@xbot.on_message(filters.media & filters.private & ~filters.media_group &filters.command("/plink"))
+async def _mainp(bot, update):
+    msg = await client.ask(message.chat.id, "**It's a secure transfer , which means no copying and forwarding  \n\nNow send any document**")
+    if(msg.text=="/plink"):
+        msg = await client.ask(message.chat.id, "**Now send me your file/video to get share link**")
+        
+    copied = await update.copy(TRACK_CHANNEL)
+    await __reply(update, copied,protect_content="True")
 xbot.run()
