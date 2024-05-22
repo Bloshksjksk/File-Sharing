@@ -143,7 +143,7 @@ async def _main(bot, update):
     # else:
     #     return
     copied = await update.copy(TRACK_CHANNEL)
-    await __reply(update,copied,protect_content=True)
+    await __reply(update,copied)
 
 @xbot.on_message(filters.media & filters.private & ~filters.media_group & filters.command("/plink"))
 async def _mainp(bot, update):
