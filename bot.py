@@ -143,14 +143,14 @@ async def _main(bot, update):
     # else:
     #     return
     copied = await update.copy(TRACK_CHANNEL)
-    await __reply(update, copied)
+    await __reply(update, copied,protect_content="True")
 
-@xbot.on_message(filters.media & filters.private & ~filters.media_group &filters.command("/plink"))
+@xbot.on_message(filters.media & filters.private & ~filters.media_group & filters.command("/plink"))
 async def _mainp(bot, update):
     msg = await client.ask(message.chat.id, "**It's a secure transfer , which means no copying and forwarding  \n\nNow send any document**")
     if(msg.text=="/plink"):
         msg = await client.ask(message.chat.id, "**Now send me your file/video to get share link**")
         
     copied = await update.copy(TRACK_CHANNEL)
-    await __reply(update, copied,protect_content="True")
+    await __reply(update, copied)
 xbot.run()
