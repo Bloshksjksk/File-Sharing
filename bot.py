@@ -1,5 +1,6 @@
 import os
 from pyrogram import Client, filters
+from datetime import datetime
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 # Configs
 API_HASH = os.environ['API_HASH']
@@ -21,8 +22,10 @@ xbot = Client('File-Sharing', api_id=APP_ID, api_hash=API_HASH, bot_token=BOT_TO
 # Notify about bot start
 with xbot:
     xbot_username = xbot.get_me().username  # Better call it global once due to telegram flood id
-    print("Bot started!")
+    Current_date = datetime. now(). date() 
+    print("Bot started!",Current_date)
     xbot.send_message(int(OWNER_ID), "Bot started!")
+    xbot.send_message(int(OWNER_ID), Current_date)
 
 # Start & Get file
 @xbot.on_message(filters.command('start') & filters.private)
@@ -102,7 +105,7 @@ async def __reply(update, copied):
         await copied.delete()
         return
     await update.reply_text(
-        'Here is Your Sharing Link:',
+        'Here is Your Sharing Link:' url,
         True,
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton('Sharing Link',
@@ -145,12 +148,4 @@ async def _main(bot, update):
     copied = await update.copy(TRACK_CHANNEL)
     await __reply(update,copied)
 
-@xbot.on_message(filters.media & filters.private & ~filters.media_group & filters.command("/plink"))
-async def _mainp(bot, update):
-    msg = await client.ask(message.chat.id, "**It's a secure transfer , which means no copying and forwarding  \n\nNow send any document**")
-    if(msg.text=="/plink"):
-        msg = await client.ask(message.chat.id, "**Now send me your file/video to get share link**")
-        
-    copied = await update.copy(TRACK_CHANNEL)
-    await __reply(update, copied)
 xbot.run()
