@@ -105,11 +105,14 @@ async def __reply(update, copied):
         await copied.delete()
         return
     await update.reply_text(
-        'Here is Your Sharing Link:' url,
+        'Here is Your Sharing Link⬇️',
         True,
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton('Sharing Link',
-                                  url=f'https://telegram.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}')]
+            [InlineKeyboardButton('Sharing Link🔗',
+                                  url=f'https://telegram.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}')],
+            [InlineKeyboardButton('Delete Link🚮',
+                                  callback_data="close_data")]
+            
         ])
     )
     await asyncio.sleep(0.5)  # Wait do to avoid 5 sec flood ban 
