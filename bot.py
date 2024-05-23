@@ -120,13 +120,13 @@ async def __reply(update, copied):
         ])
     )
      
-@xbot.on_callback_query()
-async def close_button_handler(bot,callback_query):
-     if callback_query.data == "close":
+             @xbot.on_callback_query()
+             async def close_button_handler(bot,callback_query):
+                  if callback_query.data == "close":
         # Delete the message
-        await bot.delete_messages(callback_query.message.chat.id, callback_query.message.id)
-     if callback_query.data=="delete":
-         await bot.send_message(int(OWNER_ID),f'https://telegram.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}')
+                        await bot.delete_messages(callback_query.message.chat.id, callback_query.message.id)
+                  if callback_query.data=="delete":
+                        await bot.send_message(int(OWNER_ID),f'https://telegram.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}')
          
 # Store media_group
 media_group_id = 0
