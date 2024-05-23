@@ -111,11 +111,17 @@ async def __reply(update, copied):
             [InlineKeyboardButton('Sharing Link🔗',
                                   url=f'https://telegram.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}')],
             [InlineKeyboardButton('Delete Link🚮',
-                                  callback_data='close')]
+                                  callback_query.data='close')]
             
         ])
     )
      # Wait do to avoid 5 sec flood ban 
+@xbot.on_callback_query()
+def close_button_handler(bot,callback_query):
+     if callback_query.data == "close":
+        # Delete the message
+        client.delete_messages(callback_query.message.chat.id, callback_query.message.id)
+    
 # Store media_group
 media_group_id = 0
 @xbot.on_message(filters.media & filters.private & filters.media_group)
