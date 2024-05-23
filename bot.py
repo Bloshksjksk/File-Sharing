@@ -125,11 +125,21 @@ async def close_button_handler(bot,callback_query):
      if callback_query.data == "close":
         # Delete the message
         await bot.delete_messages(callback_query.message.chat.id, callback_query.message.id)
-     if callback_query.data == "delete":
-        # Delete the message
-        await bot.delete_messages(callback_query.message.chat.id, msg_id)
-        await bot.send_message(callback_query.from_user.id, "Link deleted successfully!")
-    
+   
+@xbot.on_callback_query()
+async def delete(bot, callback_query):
+    user_id = update.from_user.id
+    messages = await bot.get_messages(TRACK_CHANNEL, limit=100)
+
+    for message in messages:
+        if message.from_user.id == user_id:
+            if callback_query.data=="delete":
+               try:
+                  await message.delete()
+                  await update.reply_text("Link deleted successfully!")
+               except Exception as e:
+                  await update.reply_text(f"Error: {e}")
+                  return
     
 # Store media_group
 media_group_id = 0
