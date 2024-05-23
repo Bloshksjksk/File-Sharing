@@ -105,17 +105,19 @@ async def __reply(update, copied):
         await copied.delete()
         return
     await update.reply_text(
-        'Here is Your Sharing Link⬇️',
+        "Here is Your Sharing Link⬇️\n If you don't want the link just click delete link🚮",
         True,
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton('Sharing Link🔗',
                                   url=f'https://telegram.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}')],
             [InlineKeyboardButton('Delete Link🚮',
-                                  callback_data="close")]
+                                  callback_data="close"),
+             InlineKeyboardButton('Share Link🪁',
+                                  switch_inline_query='')]
             
         ])
     )
-     # Wait do to avoid 5 sec flood ban 
+     
 @xbot.on_callback_query()
 async def close_button_handler(bot,callback_query):
      if callback_query.data == "close":
