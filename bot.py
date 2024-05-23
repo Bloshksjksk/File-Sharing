@@ -120,8 +120,7 @@ async def __reply(update, copied):
         ])
     )
      
-             @xbot.on_callback_query()
-             async def close_button_handler(bot,callback_query):
+     async def close_button_handler(bot,callback_query):
                   if callback_query.data == "close":
         # Delete the message
                         await bot.delete_messages(callback_query.message.chat.id, callback_query.message.id)
