@@ -127,7 +127,7 @@ async def close_button_handler(bot,callback_query):
         await bot.delete_messages(callback_query.message.chat.id, callback_query.message.id)
      if callback_query.data == "delete":
         # Delete the message
-        await bot.delete_messages(callback_query.message.chat.id, callback_query.message.id)
+        await bot.delete_messages(callback_query.message.chat.id, msg_id)
         await bot.send_message(callback_query.from_user.id, "Link deleted successfully!")
     
     
