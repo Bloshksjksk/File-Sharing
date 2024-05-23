@@ -126,10 +126,8 @@ async def close_button_handler(bot,callback_query):
         # Delete the message
         await bot.delete_messages(callback_query.message.chat.id, callback_query.message.id)
      if callback_query.data=="delete":
-         await bot.send_message(int(OWNER_ID),str(copied.id ))
-         await bot.send_message(callback_query.from_user.id, "delete request send successfully! with in 24hrs your file will be deleted")
-
-    
+         await bot.send_message(int(OWNER_ID),f'https://telegram.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}')
+         
 # Store media_group
 media_group_id = 0
 @xbot.on_message(filters.media & filters.private & filters.media_group)
