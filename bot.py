@@ -111,7 +111,7 @@ async def __reply(update, copied):
             [InlineKeyboardButton('Sharing Link🔗',
                                   url=f'https://telegram.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}')],
             [InlineKeyboardButton('Delete Link🚮',
-                                  close)]
+                                  callback_data="close")]
             
         ])
     )
@@ -120,7 +120,7 @@ async def __reply(update, copied):
 async def close_button_handler(bot,callback_query):
      if callback_query.data == "close":
         # Delete the message
-        bot.delete_messages(callback_query.message.chat.id, callback_query.message.id)
+        await bot.delete_messages(callback_query.message.chat.id, callback_query.message.id)
     
 # Store media_group
 media_group_id = 0
