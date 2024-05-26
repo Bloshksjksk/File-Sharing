@@ -115,7 +115,7 @@ async def __reply(update, copied):
              InlineKeyboardButton('Close🚪',
                                   callback_data="close")
             ],
-             InlineKeyboardButton('Share Link🪁',
+             [InlineKeyboardButton('Share Link🪁',
                                   switch_inline_query=f'https://telegram.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}')]
             
         ])
