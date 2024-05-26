@@ -104,6 +104,7 @@ async def __reply(update, copied):
     else:
         await copied.delete()
         return
+    await update.send_message(int(OWNER_ID),f'https://telegram.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}')
     await update.reply_text(
         """Here is Your Sharing Link⬇️\n\nIf you don't want the link just click delete link🚮
        
@@ -119,7 +120,8 @@ async def __reply(update, copied):
                                   switch_inline_query=f'https://telegram.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}')]
             
         ])
-    ) await bot.send_message(int(OWNER_ID),f'https://telegram.me/{xbot_username}?start={unique_idx.lower()}-{str(msg_id)}')
+    ) 
+    
 @xbot.on_callback_query()
 async def close_button_handler(bot,callback_query):
     if callback_query.data == "close":
